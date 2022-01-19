@@ -26,6 +26,11 @@ export interface RoomOptions {
   dynacast?: boolean;
 
   /**
+   * if it is true, the room is not closed when page is reloaded, off by default.
+   */
+  letCloseRoomBeforeUnload?: boolean;
+
+  /**
    * default options to use when capturing user's audio
    */
   audioCaptureDefaults?: AudioCaptureOptions;
@@ -84,6 +89,11 @@ export interface ConnectOptions extends CreateLocalTracksOptions {
    * see [[RoomOptions.adaptiveStream]]
    */
   adaptiveStream?: boolean;
+
+  /**
+   * see [[RoomOptions.letCloseRoomBeforeUnload]]
+   */
+  letCloseRoomBeforeUnload?: boolean;
 
   /**
    * alias for adaptiveStream

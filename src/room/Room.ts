@@ -263,7 +263,9 @@ class Room extends EventEmitter {
         clearTimeout(connectTimeout);
 
         // also hook unload event
-        window.addEventListener('beforeunload', this.onBeforeUnload);
+        if (!this.options.letCloseRoomBeforeUnload) {
+          window.addEventListener("beforeunload", this.onBeforeUnload);
+        }
         navigator.mediaDevices.addEventListener('devicechange', this.handleDeviceChange);
 
         resolve(this);
